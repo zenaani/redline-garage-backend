@@ -11,14 +11,14 @@ import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 @RestController()
-@RequestMapping("/api/accessories")
+@RequestMapping("/api/bikes")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:61175")
 public class AccessoryController {
 
     private final AccessoryService accessoryService;
 
-    @GetMapping("/{accessoryId}/reviews")
+    @GetMapping("{bikeId}/accessories")
     public PagedResponse<AccessoryResponse> getAccessoriesByBike(
             @PathVariable long bikeId,
             @RequestParam(defaultValue = "0") int page,
